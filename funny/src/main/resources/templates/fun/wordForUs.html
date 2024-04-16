@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Word for us</title>
+</head>
+<body>
+	<form method="get" action="#" th:action = "@{/funny/saveWord}" th:object = "${word}">
+	<h1>Give a word for us</h1>
+	<textarea name="content" placeholder="word for us" th:field = "*{wordContent}"></textarea>
+	<input type="hidden" th:field = "*{userId}">
+	<input type="submit" value="Give"> 
+	
+	<p th:text = "${message}"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,1 @@
+package com.timepass.funny.repository;

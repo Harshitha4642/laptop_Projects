@@ -1,0 +1,16 @@
+<h3>Available Cycles:</h3>
+<table>
+    <tr>
+        <th>Cycle Id</th>
+        <th>Brand</th>
+        <th>Return</th>
+    </tr>
+    <tr *ngFor="let cycle of cycles">
+        <td>{{cycle.id}}</td>
+        <td>{{cycle.brand.name}}</td>
+        <td>
+            <button type="button" (click)="borrowCycle(cycle)">Borrow</button>
+        </td>
+    </tr>
+
+</table>

@@ -1,0 +1,45 @@
+<h3 class="align-center">Restock</h3>
+
+<table class="align-center">
+    <tr>
+        <th>Brand Id</th>
+        <th>Brand</th>
+        <th>Cost</th>
+        <th>Available</th>
+        <th>Restock</th>
+        <th>Quantity</th>
+        
+    </tr>
+    <tr *ngFor="let brand of brands">
+        <td>{{brand.id}}</td>
+        <td>{{brand.name}}</td>
+        <td>{{brand.cost}}</td>
+        <td>{{brand.stock}}</td>
+        <td>
+            <button type="button" (click)="restock(brand)">
+                Restock
+            </button>
+        </td>
+        <td>
+            <input id="count" [(ngModel)]="count" placeholder="count" type="number">
+        </td>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<div class="align-center">
+    <h4>Add New Brand:</h4>
+    <label for="name">Brand: </label>
+    <input type="text" name="name" id="name" [(ngModel)]="name">
+    <br><br>
+    <label for="Stock">Stock: </label>
+    <input type="number" name="qty" id="qty" [(ngModel)]="qty">
+    <br><br>
+    <label for="cost">Cost: </label>
+    <input type="number" name="cost" id="cost" [(ngModel)]="cost"><br><br>
+    <button type="button" (click)="addNewBrand()">
+        Submit
+    </button>
+</div>

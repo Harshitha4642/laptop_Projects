@@ -1,0 +1,12 @@
+<div class = "form-container">
+<form>
+Enter odometer reading: <input name = "odo" type="number" [(ngModel)]="odoReading"><br><br>
+<div class = "button-container">
+<button (click) = "increment()" class = "submit-button">Increment</button>
+<button (click) = "decrement()" class = "submit-button">Decrement</button>
+<button (click) = "reset()" class = "submit-button">Reset</button><br>
+</div>
+</form><br>
+{{message}}
+</div>
+

@@ -1,0 +1,22 @@
+<h3>Borrowed Cycles:</h3>
+<table>
+    <tr>
+        <th>Select</th>
+        <th>Cycle Id</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+        <th>Status</th>
+    </tr>
+    <tr *ngFor="let cycle of cycles">
+        <td><input type="checkbox" [(ngModel)]="cycle.selected" (input) = "addCost(cycle.cost, cycle.selected, cycle.status)"></td>
+        <td>{{cycle.id}}</td>
+        <td>{{cycle.brand.name}}</td>
+        <td>{{cycle.quantity}}</td>
+        <td>{{cycle.cost}}</td>
+        <td>{{ cycle.status ? 'returned' : 'not-returned' }}</td>
+    </tr><br><br>
+    <h4>Total price: {{cost}}</h4>
+</table>
+
+<button (click)="returnSelectedCycles()">Return</button> 

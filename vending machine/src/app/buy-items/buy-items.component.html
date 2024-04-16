@@ -1,0 +1,37 @@
+
+<div align = "center">
+<form>
+    <label>Enter the product Id: </label>
+    <input type = "number" name = "pro" [(ngModel)] = "product_id"><br><br>
+    <button (click) = "getItemsOfDoor()">Buy</button><br><br>
+</form>
+</div>
+
+<div *ngIf="itemsOfDoor.length>0">
+<table>
+    <tr>
+        <th> Product ID</th>
+        <th> Door number</th>
+        <th> Product name</th>
+        <th> Product cost</th>
+        <th> Available</th>
+        <th> Quantity</th>
+    </tr>
+
+    <tr *ngFor="let item of itemsOfDoor; let i = index">
+        <td>{{item.id}}</td>
+        <td>{{item.doorNo}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.cost}}</td>
+        <td>{{item.quantity}}</td>
+        <td><input type = "number" name = "q" [(ngModel)] = "quantities[i]" [max]= "item.quantity"></td>
+
+    </tr>
+<br><br><br>
+
+    <button (click) = "closeDoor()" align = "center">Close Door</button>
+
+</table>
+</div>
+
+    

@@ -1,0 +1,46 @@
+h3, h4 {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.align-center {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+button {
+    background-color: rgb(23, 23, 24);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(101, 101, 124);
+  }
+
+  /* Customize the toastr notification */
+.custom-toast {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f44336; /* Set the background color */
+    color: white; /* Set the text color */
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Adjust the z-index to ensure it's on top */
+  }
+  

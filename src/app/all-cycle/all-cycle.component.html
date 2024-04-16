@@ -1,0 +1,27 @@
+<br>
+<h3 class="align-center">All Brands</h3>
+
+<table class="align-center">
+    <tr>
+        <th>Brand Id</th>
+        <th>Brand</th>
+        <th>Available</th>
+        <th>Cost</th>
+        <th>Quantity</th>
+        <th>Cart</th>
+    </tr>
+    <tr *ngFor="let brand of brands">
+        <td>{{brand.id}}</td>
+        <td>{{brand.name}}</td>
+        <td>{{brand.stock}}</td>
+        <td>{{brand.cost}}</td>
+        <td>
+            <input id="count" [(ngModel)]="count" placeholder="count" type="number">
+        </td>
+        <td>
+            <button type="button" (click)="addToCart(brand)">
+                Add to Cart
+            </button>
+        </td>
+    </tr>
+</table><br><br>
