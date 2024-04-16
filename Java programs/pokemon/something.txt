@@ -1,0 +1,4 @@
+Path p = Paths.get(filePath);
+Files.write(p, message, StandardOpenOption.Append);
+System.err.println("Can't access file");
+log(

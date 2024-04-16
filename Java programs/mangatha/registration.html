@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<style>
+div {
+  background-color: lightgrey;
+  width: 50%;
+  border: 15px solid green;
+  padding: 100px;
+  margin: 20px;
+  align-items: left;
+}
+
+</style>
+<title>Register</title>
+</head>
+<body>
+	<div>
+	<form action="initialize" method="post">
+		<h2>Player 1</h2>
+		Enter your name:<input type="text" name="p1_name"><br><br>
+		
+		Choose the rank of card:<br><br>
+		<select name="rank1">
+		
+		<option value="spade">Spade</option>
+		<option value="club">Club</option>
+		<option value="diamond">Diamond</option>
+		<option value="heart">heart</option>
+		
+		</select><br><br>
+		Choose the value of card:<br>
+		<select name="value1">
+
+		<option value="2">2</option><br>
+		<option value="3">3</option><br>
+		<option value="4">4</option><br>
+		<option value="5">5</option><br>
+		<option value="6">6</option><br>
+		<option value="7">7</option><br>
+		<option value="8">8</option><br>
+		<option value="9">9</option><br>
+		<option value="10">10</option><br>
+		<option value="J">J</option><br>
+		<option value="Q">Q</option><br>
+		<option value="K">K</option><br>
+		<option value="A">A</option><br>
+		
+		</select><br><br>
+		Guess the category:<br><br>
+		<input type="radio" name="category1" value="in">In pool<br>
+		<input type="radio" name="category1" value="out">Out pool<br><br>
+		
+		<h2>Player 2</h2>
+		Enter your name:<input type="text" name="p2_name"><br><br>
+		Choose the rank of card:<br><br>
+		<select name="rank2">
+		
+		<option value="spade">Spade</option>
+		<option value="club">Club</option>
+		<option value="diamond">Diamond</option>
+		<option value="heart">heart</option>
+		
+		</select><br><br>
+		
+		Choose the value of card:<select name="value2">
+
+		<option value="2">2</option><br>
+		<option value="3">3</option><br>
+		<option value="4">4</option><br>
+		<option value="5">5</option><br>
+		<option value="6">6</option><br>
+		<option value="7">7</option><br>
+		<option value="8">8</option><br>
+		<option value="9">9</option><br>
+		<option value="10">10</option><br>
+		<option value="J">J</option><br>
+		<option value="Q">Q</option><br>
+		<option value="K">K</option><br>
+		<option value="A">A</option><br>
+		
+		</select><br><br>
+		
+		Guess the category:<br><br>
+		<input type="radio" name="category2" value="in">In pool<br>
+		<input type="radio" name="category2" value="out">Out pool<br><br>
+		
+		<input type="submit" name="submit" value="Play">
+	</form>
+	</div>
+</body>
+</style>

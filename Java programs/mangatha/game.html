@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Game</title>
+<style>
+div {
+  background-color: lightgrey;
+  width: 30px;
+  border: 15px solid green;
+  padding: 15px;
+  margin: 20px;
+}
+.button {
+  background-color: #4CAF70;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+
+<form method="post" action="cardgame">
+<h2>Player 1 bet:</h2>	
+<div><p><span th:text="${Player1card}"></span></p></div>
+<p><span th:text="${bet1}"></span></p>
+<h2>Player 2 bet:</h2>
+<div><p><span th:text="${Player2card}"></span></p></div>
+<p><span th:text="${bet2}"></span></p>
+<input type="submit" name="takeCard" class = "button" value="Take"><br><br>
+<h2>Results:</h2>
+<h3>inpile:</h3>
+<div><p><span th:text="${card}"></span></p></div>
+
+<h3>outpile:</h3>
+<div><p><span th:text="${card1}"></span></p></div>
+
+</form>
+</body>
+</html>

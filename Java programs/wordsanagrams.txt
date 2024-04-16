@@ -1,0 +1,64 @@
+import java.util.Scanner;
+import java.util.*;
+import java.lang.String;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class areAnagrams{
+    public static boolean anagrams(String aword, String bword)
+    {
+        aword=aword.toLowerCase();
+        bword=bword.toLowerCase();
+        char[] a_array=aword.toCharArray();
+        char[] b_array=bword.toCharArray();
+        
+        Arrays.sort(a_array);
+        Arrays.sort(b_array);
+     
+        if(Arrays.equals(a_array,b_array)){
+            return(true);
+        }
+        else{
+            return(false);
+        }
+            
+    }
+    
+    public static void main(String[] args)
+    {
+        String[] words= {"spare", "spear", "hello", "bun", "nub", "reaps", "rose", "sore"};
+        String [][] sortedWords= new String[7][6];
+        List<T> list = new ArrayList<>();
+        Collections.addAll(list, array);
+        int i,j;
+        
+        for(i=0;i<words.length;i++)
+        {
+            int k=0;
+            for(j=i+1;j<words.length;j++)
+            {
+                if(anagrams(words[i],words[j]))
+                {
+                    sortedWords[i][k++]=words[i];
+                    sortedWords[i][k++]=words[j];
+                    
+                    //System.out.println(sortedWords[i][0]);
+                }
+                
+            }
+        }
+        /*for(i=0;i<sortedWords.length;i++){
+            removeDuplicates(sortedWords[i], sortedWords.length);*/
+        for(i=0;i<sortedWords.length; i++)
+        {
+            j=0;
+            while(sortedWords[i][j]!=null){
+                System.out.print(sortedWords[i][j++]+" ");
+            }
+            System.out.println();
+        }
+        
+        
+    }
+}

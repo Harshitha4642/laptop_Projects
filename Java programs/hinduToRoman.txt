@@ -1,0 +1,67 @@
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.lang.Math.*;
+public class romanToHindu {
+	public static String convert (int number)
+	{
+		Map<String, Integer> symbols = new HashMap<>();
+		symbols.put("I", 1);
+		symbols.put("V", 5);
+		symbols.put("X", 10);
+		symbols.put("L", 50);
+		symbols.put("C", 100);
+		symbols.put("D", 500);
+		symbols.put("M", 1000);
+		
+		List<Integer> numbers= new ArrayList<Integer>();
+		numbers.add(1);
+		numbers.add(5);
+		numbers.add(10);
+		numbers.add(50);
+		numbers.add(100);
+		numbers.add(500);
+		numbers.add(1000);
+		
+		List<Integer> num=new ArrayList<Integer>();
+		List<Integer> stack=new ArrayList<Integer>();	
+		int temp=number;
+		while(temp>0)
+		{
+		    num.add(temp%10);
+		    temp=temp/10;
+		}
+		Collections.reverse(num);
+		int len=num.size();
+		for(int i=0;i<len;i++)
+		{
+		    int powe= (int)Math.pow(10,len-i-1);
+		    temp=num.get(i)*powe;
+		    
+		    for(Integer val: symbols)
+		    {
+    			if(val>temp)
+		    }
+		    
+		}
+		
+        
+		return("namaste");
+	
+	}
+	public static void main(String[] args)
+	{
+		
+		System.out.println(convert(384));
+		/*
+		System.out.println(convert("XXVII"));
+		System.out.println(convert("LVIII"));
+		System.out.println(convert("CXXIII"));
+		System.out.println(convert("DCXLI"));
+		System.out.println(convert("CCCXLIII"));
+		System.out.println(convert("MMMDCCXXIV"));
+		System.out.println(convert("MMMMMCDLXIX"));
+		*/
+	}
+
+}

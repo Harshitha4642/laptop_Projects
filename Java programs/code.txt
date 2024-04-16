@@ -1,0 +1,71 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.lang.String;
+
+public class Main {  
+  public static void main(String[] args) {  
+    try {
+      File myObj = new File("file.txt");
+      Scanner myReader = new Scanner(myObj); 
+      String words[]= new String[100];
+      int len=0,i=0,j;
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        words[len]=data;
+        len++;
+      }
+      String ranks[][]= new String[100][2];
+      for(i=0;i<len;i++)
+      {
+          j=0;
+          String str = words[i];
+          String[] arrOfStr = str.split(",", 2);
+     
+            for (String a : arrOfStr){
+                ranks[i][j]=a;
+                j++;
+            }
+      }
+      
+      for (i = 0; i < len; i++)   
+      {  
+            for (j = i + 1; j < len; j++)   
+            {  
+                String tmp = " ";  
+                if (Integer.parseInt(ranks[i][1]) < Integer.parseInt(ranks[j][1]))   
+                {  
+                    tmp = ranks[i][1];  
+                    ranks[i][1] = ranks[j][1];  
+                    ranks[j][1] = tmp;
+                    
+                    tmp = ranks[i][0];  
+                    ranks[i][0] = ranks[j][0];  
+                    ranks[j][0] = tmp;
+                }  
+            }  
+      }
+      //System.out.print(ranks[0][0]+"  ");
+      
+      for (i = 0; i < len; i++) 
+      {
+          System.out.print(ranks[i][0]+"  ");
+          System.out.println(ranks[i][1]);
+      }
+      
+      file1 = open('myfile.txt', 'w');
+        //L = ["This is Delhi \n", "This is Paris \n", "This is London \n"]
+        s = "Hello\n"
+ 
+    # Writing a string to file
+    file1.write(s)
+      
+      
+      
+      myReader.close();
+    } catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    } 
+  }  
+} 

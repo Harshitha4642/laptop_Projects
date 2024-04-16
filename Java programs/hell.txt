@@ -1,0 +1,87 @@
+package bigproblems;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.lang.String;
+import java.io.FileWriter;  
+import java.io.IOException;
+
+public class rankProduct {  
+  public static void main(String[] args) {  
+    try {
+      File myObj = new File("/home/harshithams/eclipse-workspace/bigproblems/src/bigproblems/inputFile");
+      Scanner myReader = new Scanner(myObj); 
+      
+      String words[]= new String[100];
+      int len=0,i=0,j;
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+        words[len]=data;
+        len++;
+      }
+      String ranks[][]= new String[100][2];
+      for(i=0;i<len;i++)
+      {
+          j=0;
+          String str = words[i];
+          String[] arrOfStr = str.split(",", 2);
+     
+            for (String a : arrOfStr){
+                ranks[i][j]=a;
+                j++;
+            }
+      }
+      
+      for (i = 0; i < len; i++)   
+      {  
+            for (j = i + 1; j < len; j++)   
+            {  
+                String tmp = " ";  
+                if (Integer.parseInt(ranks[i][1]) < Integer.parseInt(ranks[j][1]))   
+                {  
+                    tmp = ranks[i][1];  
+                    ranks[i][1] = ranks[j][1];  
+                    ranks[j][1] = tmp;
+                    
+                    tmp = ranks[i][0];  
+                    ranks[i][0] = ranks[j][0];  
+                    ranks[j][0] = tmp;
+                }  
+            }  
+      }
+      
+      int temp=1;
+      i=1;
+      String ab= ranks[1][1];
+      try{
+         FileWriter output = new FileWriter("/home/harshithams/eclipse-workspace/bigproblems/src/bigproblems/output");
+         output.write("Product  Rank\n");
+      while(i<len+1)
+      {
+          if(ab.equals(ranks[i-1][1])){
+              output.write(ranks[i-1][0]+"  "+temp);
+              i++;
+          }
+          else{
+              temp=i;
+              ab=ranks[i-1][1];
+              output.write(ranks[i-1][0]+"  "+i);
+              i++;
+          }
+          output.write("\n");
+      }
+      System.out.println("Data is written to the file.");
+       output.close();
+      }
+      catch (Exception e) {
+       e.getStackTrace();
+     }
+      myReader.close();
+    }
+     catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }  
+} 

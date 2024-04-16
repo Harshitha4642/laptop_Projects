@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Restock</title>
+</head>
+<body>
+<h3>Restock form</h3>
+<form action="/removeCycles" method="get">
+Enter the id to restock:<br><br>
+<input type="number" name="restockID"><br><br>
+<input type="submit" name="submit" value="Restock"><br><br>
+</form>
+<p th:text="${message}"></p>
+</body>
+</html>

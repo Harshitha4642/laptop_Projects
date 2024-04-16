@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.Arrays;
+
+
+class GFG {
+
+	public class num_to_char_month{
+    	
+         int[] cum_month_non_leap={0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+         int[] cum_month_leap={0, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335};
+    
+        
+        public static boolean isLeap(int year){
+        	return (year % 100!=0 && year %4==0 || year % 400 ==0);
+           }
+        
+        public static boolean get_cum_calender(int year){
+        	return (isLeap(year) ? cum_month_leap : cum_month_non_leap);
+        }
+        
+	
+   	     public static String convert_date(String ddmmyyyy)
+         {
+    	int mon;
+    	int date= (int)ddmmyyyy.substring(4);
+        System.out.println(date);
+        int year= (int)ddmmyyyy.substring(0,4);
+        int calen[]= get_cum_calender(year);
+        
+        for(int num:calen)
+        {
+        	if(date<num)
+            	mon= calen.indexOf(num);
+                break;
+        }
+        int month= mon-1;
+        int day= (int)calen[month]-(int)date;
+        
+        System.out.println(day+"/"+month+"/"+year);
+     }
+    
+    
+    public static void main (String[] args) {
+	    Scanner sc= new Scanner(System.in);  
+		convert_date("2003001");
+	}
+}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sudoku Verifier</title>
+	<style>
+	 body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+        }
+		 button {
+            margin-top: 10px;
+            padding: 8px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+	</style>
+</head>
+<body>
+    <h1>Sudoku Verifier</h1>
+    <form action="/verifySudoku" method="post">
+        <textarea name="sudoku" rows="9" cols="9" th:text="${sudoku}" required></textarea>
+        <br>
+        <button type="submit">Verify</button>
+    </form>
+    <p th:text="${result}" th:if="${result != null}"></p>
+</body>
+</html>
