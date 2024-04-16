@@ -1,0 +1,17 @@
+<template>
+    <lightning-input label="Enter Contact First Name" name="name" value={FirstName} onchange={handleChange}></lightning-input>
+    <lightning-input label="Enter Contact Email " name="email" value={Email} onchange={handleChange}></lightning-input>
+    <lightning-button variant="base" label="Show" onclick={showDetails} class="slds-m-left_x-small"></lightning-button><br><br>
+    <template lwc:if={isClicked}>
+        welcome to salesforce LWC<br><br>
+        Name: {showname}<br><br>
+        email: {showemail}<br><br>
+    </template>
+
+    
+ 
+    <!-- <lightning-button variant="base" label="CreateContacts"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button variant="base" label="UpdateContacts"  onclick={handleClick2} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button variant="base" label="Go Home"  onclick={navigateToObjectHome} class="slds-m-left_x-small"></lightning-button> -->
+
+</template>

@@ -1,0 +1,17 @@
+<template>
+   
+    <lightning-input label="Enter Contact First Name" name="firstname" value={firstName} onchange={handleChange}></lightning-input>
+    <lightning-input label="Enter Contact Last Name " name="lastname" value={lastName} onchange={handleChange}></lightning-input>
+    <lightning-input label="Enter Contact Email " name="email" value={email} onchange={handleChange}></lightning-input>
+ 
+    <lightning-button variant="base" label="Contacts"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button variant="base" label="UpdateContacts"  onclick={handleClick2} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button variant="base" label="Go home"  onclick={navigateToObjectHome} class="slds-m-left_x-small"></lightning-button>
+    <lightning-button
+    variant="destructive"
+    label="Delete"
+    icon-name="utility:delete"
+    icon-position="right"
+    onclick={deleteTheContact}
+  ></lightning-button>
+</template>

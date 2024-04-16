@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Fetch Applications">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Country Name" name = "countryName" type="text" value={countryName} onchange={handleInputChange}></lightning-input>
+            <lightning-input label="Capital" name = "countryCapital" type="text" value={countryCapital} onchange={handleInputChange}></lightning-input>
+            <lightning-combobox label="Visa status" name="visaStatus" value={visaStatus} options={visaStatusOptions} onchange={handleInputChange}></lightning-combobox>
+<br>
+ 
+            <lightning-button label="Save" onclick={handleSave} variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

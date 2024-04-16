@@ -1,0 +1,32 @@
+<template>
+        <lightning-button variant="brand" label="Start" title="Begins the task" onclick={handleClick}>
+        </lightning-button>
+     
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Website</th>                
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={localresult} for:item="item">
+                    {item}
+                    <tr key={item.AccountNumber}>
+                        <td>{item.Name}</td>
+                        <td>{item.industry}</td>
+                        <td><a href={item.Website}>{item.Type}</a></td>
+                    </tr>
+                </template>
+            </tbody>    
+        </table>
+
+    <lightning-button 
+        variant="base" 
+        label="click me" 
+        title="Looks like a link" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small">
+    </lightning-button>
+</template>
