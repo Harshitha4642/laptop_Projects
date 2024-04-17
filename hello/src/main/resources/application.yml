@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: 'jdbc:mysql://localhost:3306/cycleFinal'
-    username: Harshitha
-    password: harshitha@123
+    #username: removed
+    #password: removed
   jpa:
     properties:
       hibernate:
